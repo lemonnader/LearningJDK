@@ -734,7 +734,7 @@ public final class Integer extends Number implements Comparable<Integer> {
             throw NumberFormatException.forInputString(s);
         }
     }
-    
+
     /**
      * Parses the string argument as a signed decimal integer. The
      * characters in the string must all be decimal digits, except
@@ -758,7 +758,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     public static int parseInt(String s) throws NumberFormatException {
         return parseInt(s, 10);
     }
-    
+
     /**
      * Parses the {@link CharSequence} argument as a signed {@code int} in the
      * specified {@code radix}, beginning at the specified {@code beginIndex}
@@ -791,7 +791,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     // 按radix进制形式将字符序列s的[beginIndex, endIndex)部分解析为int值
     public static int parseInt(CharSequence s, int beginIndex, int endIndex, int radix) throws NumberFormatException {
         s = Objects.requireNonNull(s);
-        
+
         if(beginIndex<0 || beginIndex>endIndex || endIndex>s.length()) {
             throw new IndexOutOfBoundsException();
         }
@@ -801,11 +801,11 @@ public final class Integer extends Number implements Comparable<Integer> {
         if(radix>Character.MAX_RADIX) {
             throw new NumberFormatException("radix " + radix + " greater than Character.MAX_RADIX");
         }
-        
+
         boolean negative = false;
         int i = beginIndex;
         int limit = -Integer.MAX_VALUE;
-        
+
         if(i<endIndex) {
             char firstChar = s.charAt(i);
             if(firstChar<'0') { // Possible leading "+" or "-"
@@ -840,7 +840,7 @@ public final class Integer extends Number implements Comparable<Integer> {
             throw NumberFormatException.forInputString("");
         }
     }
-    
+
     /**
      * Parses the string argument as an unsigned integer in the radix
      * specified by the second argument.  An unsigned integer maps the
@@ -890,7 +890,7 @@ public final class Integer extends Number implements Comparable<Integer> {
         if(s == null) {
             throw new NumberFormatException("null");
         }
-        
+
         int len = s.length();
         if(len>0) {
             char firstChar = s.charAt(0);
